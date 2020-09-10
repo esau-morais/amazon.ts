@@ -2,7 +2,7 @@ import React from "react";
 // Components
 import { Link } from "../index";
 import { Container, Img, Row, ProductsList } from "./main";
-import { ToolTip } from '@material-ui/core';
+import { Tooltip } from '@material-ui/core';
 
 export default function Main() {
   return (
@@ -16,7 +16,7 @@ export default function Main() {
         <Link href="/">See all</Link>
       </Row>
       <ProductsList>
-        <ToolTip title="Add to basket" arrow>
+        <Tooltip title="Add to basket" arrow>
           <div className="productCard">
             <div className="productImage">
               <img
@@ -30,8 +30,8 @@ export default function Main() {
               <span>$34.47</span>
             </div>
           </div>
-        </ToolTip>
-        <ToolTip title="Add to basket" arrow>
+        </Tooltip>
+        <Tooltip title="Add to basket" arrow>
           <div className="productCard">
             <div className="productImage">
               <img
@@ -45,8 +45,8 @@ export default function Main() {
               <span>$8.99</span>
             </div>
           </div>
-        </ToolTip>
-        <ToolTip title="Add to basket" arrow>
+        </Tooltip>
+        <Tooltip title="Add to basket" arrow>
           <div className="productCard">
             <div className="productImage">
               <img
@@ -60,8 +60,8 @@ export default function Main() {
               <span>$89.99</span>
             </div>
           </div>
-        </ToolTip>
-        <ToolTip title="Add to basket" arrow>
+        </Tooltip>
+        <Tooltip title="Add to basket" arrow>
           <div className="productCard">
             <div className="productImage">
               <img
@@ -75,8 +75,8 @@ export default function Main() {
               <span>$29.99</span>
             </div>
           </div>
-        </ToolTip>
-        <ToolTip title="Add to basket" arrow>
+        </Tooltip>
+        <Tooltip title="Add to basket" arrow>
           <div className="productCard">
             <div className="productImage">
               <img
@@ -90,7 +90,7 @@ export default function Main() {
               <span>$7.69</span>
             </div>
           </div>
-        </ToolTip>
+        </Tooltip>
       </ProductsList>
     </Container>
   );
