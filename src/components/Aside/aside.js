@@ -93,7 +93,6 @@ export const CartRow = styled.div`
   justify-content: space-between;
 
   p {
-    display: ${({ open }) => (open ? "unset" : "none")};
     color: #000;
   }
 

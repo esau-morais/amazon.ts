@@ -41,7 +41,10 @@ export default function Aside() {
       {/* Cart section */}
       <Cart open={open}>
         <CartRow>
-          <p open={open}>Your total price</p>
+          {/* If the side bar is open, return both.
+              Otherwise, return just "Open"
+          */}
+          {open ? <p>Your total price</p> : <></>}
           <span onClick={() => setOpen(!open)}>
             {open ? (
               <>
