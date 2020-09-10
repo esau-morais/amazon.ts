@@ -9,9 +9,17 @@ import {
   ArrowForwardIosRounded
 } from "@material-ui/icons";
 
+const iconStyle = {
+  fontSize: "0.9rem",
+  marginRight: "0.4rem"
+}
+
 export default function Aside() {
   // Define state to open/hide the side bar
   const [open, setOpen] = useState(false);
+  // Define state to the cart items and total price
+  const [items, setItems] = useState([]);
+  const [total, setTotal] = useState(0);
 
   return (
     <Nav open={open}>
@@ -48,19 +56,15 @@ export default function Aside() {
           <span onClick={() => setOpen(!open)}>
             {open ? (
               <>
-                <ArrowBackIosRounded
-                  style={{ fontSize: "0.9rem", marginRight: "0.4rem" }}
-                />
+                <ArrowBackIosRounded style={iconStyle} />
                 Roll
               </>
             ) : (
-              <>
-                Open
-                <ArrowForwardIosRounded
-                  style={{ fontSize: "0.9rem", marginLeft: "0.4rem" }}
-                />
-              </>
-            )}
+                <>
+                  Open
+                  <ArrowForwardIosRounded style={iconStyle} />
+                </>
+              )}
           </span>
         </CartRow>
         {/* Prices section */}
@@ -68,7 +72,7 @@ export default function Aside() {
           <div>
             {/* The badge content will be/is dynamic */}
             <Badge
-              badgeContent={4}
+              badgeContent={items.length}
               anchorOrigin={{
                 vertical: "bottom",
                 horizontal: "right"
@@ -77,7 +81,8 @@ export default function Aside() {
             >
               <LocalMallOutlined />
             </Badge>
-            <span className="totalPrice">$970.12</span>
+            {/* The total price will be/is dynamic */}
+            <span className="totalPrice">{total}</span>
           </div>
 
           <Link href="/">View my cart</Link>
