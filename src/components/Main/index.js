@@ -15,41 +15,70 @@ export default function Main() {
         <Link href="/">See all</Link>
       </Row>
       <ProductsList>
-        <div>
-          <img
-            src="https://lh3.googleusercontent.com/proxy/0-o_BcdTNSPdYyxcdQFymlnv_w3RvWR_oxKzvbh5NaPzvHXYwKZHEBU3LbEjPAYFZTb1-VmLIJJdRVjKk4OfPa1FTDWmXuX0klFVrdsW9wUkMGxNQCsPL1AoEwuW-uE"
-            alt=""
-          />
+        <div className="productCard">
+          <div className="productImage">
+            <img
+              src="/images/Product1.jpeg"
+              alt="Travel Hiking Camping"
+            />
+          </div>
           {/* Click and update the cart state */}
-          <p>Foldable Outdoor Backpack Travel Hiking Camping</p>
-          <span>$34.47</span>
+          <div className="productDesc">
+            <p>Travel Hiking Camping</p>
+            <span>$34.47</span>
+          </div>
         </div>
-        <div>
-          <img
-            src="https://lh3.googleusercontent.com/proxy/0-o_BcdTNSPdYyxcdQFymlnv_w3RvWR_oxKzvbh5NaPzvHXYwKZHEBU3LbEjPAYFZTb1-VmLIJJdRVjKk4OfPa1FTDWmXuX0klFVrdsW9wUkMGxNQCsPL1AoEwuW-uE"
-            alt=""
-          />
+        <div className="productCard">
+          <div className="productImage">
+            <img
+              src="/images/Product2.jpeg"
+              alt="Hippih Classic Unisex"
+            />
+          </div>
           {/* Click and update the cart state */}
-          <p>Foldable Outdoor Backpack Travel Hiking Camping</p>
-          <span>$34.47</span>
+          <div className="productDesc">
+            <p>Hippih Classic Unisex</p>
+            <span>$8.99</span>
+          </div>
         </div>
-        <div>
-          <img
-            src="https://lh3.googleusercontent.com/proxy/0-o_BcdTNSPdYyxcdQFymlnv_w3RvWR_oxKzvbh5NaPzvHXYwKZHEBU3LbEjPAYFZTb1-VmLIJJdRVjKk4OfPa1FTDWmXuX0klFVrdsW9wUkMGxNQCsPL1AoEwuW-uE"
-            alt=""
-          />
+        <div className="productCard">
+          <div className="productImage">
+            <img
+              src="/images/Product3.jpeg"
+              alt="Amazon Cloud Cam Indoor"
+            />
+          </div>
           {/* Click and update the cart state */}
-          <p>Foldable Outdoor Backpack Travel Hiking Camping</p>
-          <span>$34.47</span>
+          <div className="productDesc">
+            <p>Amazon Cloud Cam Indoor</p>
+            <span>$89.99</span>
+          </div>
         </div>
-        <div>
-          <img
-            src="https://lh3.googleusercontent.com/proxy/0-o_BcdTNSPdYyxcdQFymlnv_w3RvWR_oxKzvbh5NaPzvHXYwKZHEBU3LbEjPAYFZTb1-VmLIJJdRVjKk4OfPa1FTDWmXuX0klFVrdsW9wUkMGxNQCsPL1AoEwuW-uE"
-            alt=""
-          />
+        <div className="productCard">
+          <div className="productImage">
+            <img
+              src="/images/Product4.jpeg"
+              alt="CoolBELL 15.6 Inch Nylon"
+            />
+          </div>
           {/* Click and update the cart state */}
-          <p>Foldable Outdoor Backpack Travel Hiking Camping</p>
-          <span>$34.47</span>
+          <div className="productDesc">
+            <p>CoolBELL 15.6 Inch Nylon</p>
+            <span>$29.99</span>
+          </div>
+        </div>
+        <div className="productCard">
+          <div className="productImage">
+            <img
+              src="/images/Product5.jpeg"
+              alt="Medical Ear Thermometer"
+            />
+          </div>
+          {/* Click and update the cart state */}
+          <div className="productDesc">
+            <p>Medical Ear Thermometer</p>
+            <span>$7.69</span>
+          </div>
         </div>
       </ProductsList>
     </Container>

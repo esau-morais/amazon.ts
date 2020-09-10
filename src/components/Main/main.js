@@ -35,14 +35,32 @@ export const ProductsList = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 
-  div {
+  div.productCard {
     margin: 1rem 0.4rem;
     padding: 1rem 1rem;
+
     background-color: #ffffff;
+
+    cursor: pointer;
+    transition: box-shadow 0.4s ease-in-out;
+
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 30px 0px, rgba(0, 0, 0, 0.2) 0px 1px 2px 0px;
+    }
+  }
+
+  div.productImage {
+    height: 180px;
   }
 
   img {
     width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  div.productDesc {
+    min-height: 62px;
   }
 
   p {
