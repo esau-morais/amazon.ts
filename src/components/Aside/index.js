@@ -82,7 +82,7 @@ export default function Aside() {
               <LocalMallOutlined />
             </Badge>
             {/* The total price will be/is dynamic */}
-            <span className="totalPrice">{total}</span>
+            <span className="totalPrice">${total}</span>
           </div>
 
           <Link href="/">View my cart</Link>

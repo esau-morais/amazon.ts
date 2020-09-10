@@ -107,7 +107,7 @@ export const CartRow = styled.div`
 `;
 
 export const CartPrices = styled.div`
-  padding: 2rem 2rem;
+  padding: 2rem 1rem;
 
   display: flex;
   flex-direction: ${({ open }) => (open ? "row" : "column")};
@@ -124,7 +124,7 @@ export const CartPrices = styled.div`
   }
 
   span.totalPrice {
-    margin-left: 1rem;
+    margin-left: ${({ open }) => (open ? "1rem" : "0")};
 
     margin-top: ${({ open }) => (open ? "0" : "1rem")};
     margin-bottom: ${({ open }) => (open ? "0" : "1rem")};
