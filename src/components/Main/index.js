@@ -1,96 +1,27 @@
 import React from "react";
 // Components
-import { Link } from "../index";
-import { Container, Img, Row, ProductsList } from "./main";
-import { Tooltip } from '@material-ui/core';
+import { Container, RouteLink } from "../index";
+import { Img, Row, ProductsList } from "./main";
+import Product from './products';
 
-export default function Main() {
+export default function Main({ id, title, image, price }) {
+
   return (
     /* Main */
-    <Container>
+    <Container primary="true">
       <div>
         <Img />
       </div>
       <Row>
         <p>Recommended deals: 12 Days of Deals</p>
-        <Link href="/">See all</Link>
+        <RouteLink to="/">See all</RouteLink>
       </Row>
       <ProductsList>
-        <Tooltip title="Add to basket" arrow>
-          <div className="productCard">
-            <div className="productImage">
-              <img
-                src="/images/Product1.jpeg"
-                alt="Travel Hiking Camping"
-              />
-            </div>
-            {/* Click and update the cart state */}
-            <div className="productDesc">
-              <p>Travel Hiking Camping</p>
-              <span>$34.47</span>
-            </div>
-          </div>
-        </Tooltip>
-        <Tooltip title="Add to basket" arrow>
-          <div className="productCard">
-            <div className="productImage">
-              <img
-                src="/images/Product2.jpeg"
-                alt="Hippih Classic Unisex"
-              />
-            </div>
-            {/* Click and update the cart state */}
-            <div className="productDesc">
-              <p>Hippih Classic Unisex</p>
-              <span>$8.99</span>
-            </div>
-          </div>
-        </Tooltip>
-        <Tooltip title="Add to basket" arrow>
-          <div className="productCard">
-            <div className="productImage">
-              <img
-                src="/images/Product3.jpeg"
-                alt="Amazon Cloud Cam Indoor"
-              />
-            </div>
-            {/* Click and update the cart state */}
-            <div className="productDesc">
-              <p>Amazon Cloud Cam Indoor</p>
-              <span>$89.99</span>
-            </div>
-          </div>
-        </Tooltip>
-        <Tooltip title="Add to basket" arrow>
-          <div className="productCard">
-            <div className="productImage">
-              <img
-                src="/images/Product4.jpeg"
-                alt="CoolBELL 15.6 Inch Nylon"
-              />
-            </div>
-            {/* Click and update the cart state */}
-            <div className="productDesc">
-              <p>CoolBELL 15.6 Inch Nylon</p>
-              <span>$29.99</span>
-            </div>
-          </div>
-        </Tooltip>
-        <Tooltip title="Add to basket" arrow>
-          <div className="productCard">
-            <div className="productImage">
-              <img
-                src="/images/Product5.jpeg"
-                alt="Medical Ear Thermometer"
-              />
-            </div>
-            {/* Click and update the cart state */}
-            <div className="productDesc">
-              <p>Medical Ear Thermometer</p>
-              <span>$7.69</span>
-            </div>
-          </div>
-        </Tooltip>
+        <Product product="Travel Hiking Camping" image="/images/Product1.jpeg" price="34.47" />
+        <Product product="Hippih Classic Unisex" image="/images/Product2.jpeg" price="8.99" />
+        <Product product="Amazon Cloud Cam Indoor" image="/images/Product3.jpeg" price="89.99" />
+        <Product product="CoolBELL 15.6 Inch Nylon" image="/images/Product4.jpeg" price="29.99" />
+        <Product product="Medical Ear Thermometer" image="/images/Product5.jpeg" price="7.69" />
       </ProductsList>
     </Container>
   );

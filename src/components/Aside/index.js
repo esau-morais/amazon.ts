@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 // Components
 import { Nav, Row, SearchBar, Cart, CartRow, CartPrices } from "./aside";
-import { Link } from "../index";
+import { RouteLink } from "../index";
 import { Badge } from "@material-ui/core";
 import {
   LocalMallOutlined,
   ArrowBackIosRounded,
   ArrowForwardIosRounded
 } from "@material-ui/icons";
+// Basket
+import { useCartValue } from "../../providers/cart";
 
 const iconStyle = {
   fontSize: "0.9rem",
@@ -20,6 +22,7 @@ export default function Aside() {
   // Define state to the cart items and total price
   const [items, setItems] = useState([]);
   const [total, setTotal] = useState(0);
+  const [{ basket }, dispatch] = useCartValue();
 
   return (
     <Nav open={open}>
@@ -72,7 +75,7 @@ export default function Aside() {
           <div>
             {/* The badge content will be/is dynamic */}
             <Badge
-              badgeContent={items.length}
+              badgeContent={basket.length}
               anchorOrigin={{
                 vertical: "bottom",
                 horizontal: "right"
@@ -85,7 +88,7 @@ export default function Aside() {
             <span className="totalPrice">${total}</span>
           </div>
 
-          <Link href="/">View my cart</Link>
+          <RouteLink to="/checkout">View my cart</RouteLink>
 
           <hr />
         </CartPrices>

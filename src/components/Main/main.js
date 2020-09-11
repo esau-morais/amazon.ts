@@ -1,12 +1,5 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  width: 100%;
-  overflow-y: auto;
-
-  background-color: #f8f9fb;
-`;
-
 export const Img = styled.div`
   width: 100%;
   height: 60vh;
@@ -35,11 +28,12 @@ export const ProductsList = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 
-  div.productCard {
+  button.productCard {
     margin: 1rem 0.4rem;
     padding: 1rem 1rem;
 
     background-color: #ffffff;
+    border: none;
 
     cursor: pointer;
     transition: box-shadow 0.4s ease-in-out;
@@ -61,6 +55,11 @@ export const ProductsList = styled.div`
 
   div.productDesc {
     min-height: 62px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
   }
 
   p {

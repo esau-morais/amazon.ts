@@ -16,7 +16,12 @@ const Global = createGlobalStyle`
 
   body, html, #root {
     width: 100%;
-    height:100%
+    height: 100%;
+    background-color: #f8f9fb;
+  }
+
+  a {
+    text-decoration: none;
   }
 `;
 
