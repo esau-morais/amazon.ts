@@ -23,6 +23,10 @@ const Global = createGlobalStyle`
   a {
     text-decoration: none;
   }
+
+  .MuiBadge-badge.MuiBadge-anchorOriginBottomRightRectangle.MuiBadge-colorPrimary {
+    background-color: #e9a842
+  }
 `;
 
 export default Global;

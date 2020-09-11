@@ -15,7 +15,7 @@
 - [X] Collapsed side bar
 - [ ] Main section
 - [ ] Products Section
-- [ ] Dynamic cart
+- [X] Dynamic cart
 - [ ] Responsive website
 
 

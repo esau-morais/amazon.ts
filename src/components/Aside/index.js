@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CurrencyFormat from 'react-currency-format';
 // Components
 import { Nav, Row, SearchBar, Cart, CartRow, CartPrices } from "./aside";
 import { RouteLink } from "../index";
@@ -10,6 +11,7 @@ import {
 } from "@material-ui/icons";
 // Basket
 import { useCartValue } from "../../providers/cart";
+import { cartTotalPrice } from '../../providers/reducer';
 
 const iconStyle = {
   fontSize: "0.9rem",
@@ -85,7 +87,16 @@ export default function Aside() {
               <LocalMallOutlined />
             </Badge>
             {/* The total price will be/is dynamic */}
-            <span className="totalPrice">${total}</span>
+	    <CurrencyFormat
+	      renderText={(value) => (
+	        <span className="totalPrice">{value}</span>
+	      )}
+	      value={cartTotalPrice(basket)}
+	      decimalScale={2}
+	      displayType={"text"}
+	      thousandSeparator={true}
+	      prefix={"$"}
+	    />
           </div>
 
           <RouteLink to="/checkout">View my cart</RouteLink>
