@@ -13,9 +13,10 @@
 ## Goals
 
 - [X] Collapsed side bar
-- [ ] Main section
-- [ ] Products Section
+- [X] Main section
+- [ ] Products Page
 - [X] Dynamic cart
+- [X] Login Page
 - [ ] Responsive website
 
 

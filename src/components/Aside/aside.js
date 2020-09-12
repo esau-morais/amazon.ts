@@ -95,7 +95,7 @@ export const SearchBar = styled.div`
   }
 
   @media screen and (max-width: 980px) {
-    width: 100%;
+    width: ${({ open }) => (open ? "80%" : "100%")};
   }
 `;
 
@@ -109,6 +109,22 @@ export const Cart = styled.div`
   flex-direction: ${({ open }) => (open ? "row" : "column-reverse")};
   align-items: ${({ open }) => (open ? "unset" : "center")};
   transition: flex-direction 0.4s ease-in-out;
+
+  a >  img.yourProfile {
+    width: ${({ open }) => (open ? "20%" : "40%")};
+
+    margin: ${({ open }) => (open ? "2rem auto" : "0 auto")};
+
+    display: flex;
+
+    transition: transform 0.4s ease-in-out;
+  }
+
+  @media screen and (max-width: 980px) {
+    a > img.yourProfile {
+      width: ${({ open }) => (open ? "20%" : "100%")};
+    }
+  }
 `;
 
 export const CartRow = styled.div`
@@ -149,6 +165,10 @@ export const CartPrices = styled.div`
     align-items: center;
   }
 
+  a {
+    margin-top: ${({ open }) => (open ? "0" : "2rem")}
+  }
+
   span.totalPrice {
     margin-left: ${({ open }) => (open ? "1rem" : "0")};
 
@@ -159,7 +179,7 @@ export const CartPrices = styled.div`
     font-weight: bold;
 
     @media screen and (max-width: 980px) {
-      display: ${({ open }) => (open ? "unset" : "none")}
+      display: ${({ open }) => (open ? "unset" : "none")};
     }
   }
 

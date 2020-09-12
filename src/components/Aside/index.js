@@ -12,6 +12,8 @@ import {
 // Basket
 import { useCartValue } from "../../providers/cart";
 import { cartTotalPrice } from '../../providers/reducer';
+// Firebase auth
+import { auth } from "../../config/firebase";
 
 const iconStyle = {
   fontSize: "0.9rem",
@@ -24,7 +26,14 @@ export default function Aside() {
   // Define state to the cart items and total price
   const [items, setItems] = useState([]);
   const [total, setTotal] = useState(0);
-  const [{ basket }, dispatch] = useCartValue();
+  const [{ basket, user }, dispatch] = useCartValue();
+
+  // Handle the user login in/out
+  const handleUserAuth = () => {
+    if (user) {
+      auth.signOut();
+    }
+  }
 
   return (
     <Nav open={open}>
@@ -56,6 +65,13 @@ export default function Aside() {
       </SearchBar>
       {/* Cart section */}
       <Cart open={open}>
+	<RouteLink  className="signInOut" to={!user && "/login"}  onClick={handleUserAuth}>
+          {user ?
+	    <img  className="yourProfile" src="https://img.icons8.com/ios/452/login-rounded-right.png" alt="Log Out" style={{ transform: "rotate(-180deg)" }} />
+	    :
+	    <img className="yourProfile" src="https://img.icons8.com/ios/452/login-rounded-right.png" alt="Log In" />
+	  }
+	</RouteLink>
         <CartRow>
           {/* If the side bar is open, return both.
               Otherwise, return just "Open"

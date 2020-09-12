@@ -56,20 +56,32 @@ export const Container = styled.div`
     }
 
     form:first-child > button {
-      margin-top: 4rem;
-      padding: 1.6rem 1.4rem;
-
-      width: 80%;
-
       border: none;
       border-radius: 5rem;
 
-      background-color: #FFAD00;
       color: #ffffff;
 
       text-transform: uppercase;
       font-size: 1rem;
 
       cursor: pointer;
+    }
+
+    form:first-child > button.login {
+      margin-top: 4rem;
+      padding: 1.6rem 1.4rem;
+
+      width: 80%;
+
+      background-color: #ffad00;
+    }
+
+    form:first-child > button.register {
+      margin-top: auto;
+      padding: 1.2rem 1rem;
+
+      width: 60%;
+
+      background-color: #feb42f;
     }
 `;
