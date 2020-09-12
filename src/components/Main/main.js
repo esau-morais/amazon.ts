@@ -20,6 +20,11 @@ export const Row = styled.div`
   p {
     margin-right: 1rem;
   }
+
+  @media screen and (max-width: 763px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 export const ProductsList = styled.div`

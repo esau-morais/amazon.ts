@@ -29,7 +29,10 @@ export default function Aside() {
   return (
     <Nav open={open}>
       {/* Logo */}
-      <img src="/images/AmazonLogo.png" alt="Amazon" />
+      <RouteLink to="/">
+        <img className="defaultLogo" src="/images/AmazonLogo.png" alt="Amazon" />
+        <img className="minimalLogo" src="/images/AmazonLogoMinimal.png" alt="Amazon" />
+      </RouteLink>
       {/* Selection */}
       <Row open={open}>
         <select>

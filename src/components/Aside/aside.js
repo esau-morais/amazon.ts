@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Nav = styled.nav`
   padding: 1rem 2rem;
 
-  width: ${({ open }) => (open ? "404px" : "202px")};
+  width: ${({ open }) => (open ? "382px" : "180px")};
   height: 100%;
   transition: width 0.4s ease-in-out;
 
@@ -16,6 +16,28 @@ export const Nav = styled.nav`
   img {
     width: ${({ open }) => (open ? "9rem" : "8rem")};
     transition: width 0.4s ease-in-out;
+  }
+
+  img.defaultLogo {
+    display: unset;
+  }
+
+  img.minimalLogo {
+    display: none;
+  }
+
+  @media screen and (max-width: 980px) {
+    padding: 1rem;
+    width: ${({ open }) => (open ? "100%" : "60px")};
+
+    img.defaultLogo {
+      display: none;
+    }
+
+    img.minimalLogo {
+      width: 2.6rem;
+      display: unset;
+    }
   }
 `;
 
@@ -70,6 +92,10 @@ export const SearchBar = styled.div`
       font-size: 1.2rem;
       color: #dadada;
     }
+  }
+
+  @media screen and (max-width: 980px) {
+    width: 100%;
   }
 `;
 
@@ -131,6 +157,10 @@ export const CartPrices = styled.div`
 
     font-size: 1.2rem;
     font-weight: bold;
+
+    @media screen and (max-width: 980px) {
+      display: ${({ open }) => (open ? "unset" : "none")}
+    }
   }
 
   hr {

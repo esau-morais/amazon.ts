@@ -52,6 +52,23 @@ export const Container = styled.div`
 
     cursor: pointer;
   }
+
+  @media screen and (max-width: 980px) {
+    flex-direction: column;
+
+    div.checkoutProducts {
+      width: 100%;
+
+      margin-bottom: auto;
+    }
+
+    div.checkoutTotal {
+      width: 100%;
+
+      position: unset;
+      bottom: unset;
+    }
+  }
 `;
 
 export const ProductInfo = styled.div`
