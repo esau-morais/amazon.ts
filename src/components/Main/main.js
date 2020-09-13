@@ -1,11 +1,9 @@
 import styled from "styled-components";
 
 export const Img = styled.div`
-  width: 100%;
-  height: 60vh;
-  background: url(https://icdn2.digitaltrends.com/image/digitaltrends/samsung-gear-vr-thumb-2-1200x630-c-ar1.91.jpg)
-    no-repeat center fixed;
-  background-size: cover;
+  img {
+    width: 100%;
+  }
 `;
 
 export const Row = styled.div`

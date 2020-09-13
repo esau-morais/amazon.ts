@@ -27,20 +27,19 @@ export default function Payment() {
   const [error, setError] = useState(null);
   const [disabled, setDisabled] = useState(true);
   const [clientSecret, setClientSecret] = useState(true);
-
+  // Client 
   useEffect(() => {
     const getClientSecret = async () => {
       const response = await axios({
-	method: "post",
-	url: `/payments/create?total=${cartTotalPrice(basket) * 100}`
+        method: "post",
+        url: `/payments/create?total=${cartTotalPrice(basket) * 100}`
       });
-
-      setClientSecret(response.data.clientSecret);
+      setClientSecret(response.data.clientSecret);
     }
+    getClientSecret();
   }, [basket])
-
   console.log("ClientSecret >>>", clientSecret);
-
+  // Payment
   const handlePayment = async (event) => {
     // Stripe
     event.preventDefault();

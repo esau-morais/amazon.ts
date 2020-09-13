@@ -17,7 +17,7 @@
 - [ ] Products Page
 - [X] Dynamic cart
 - [X] Login Page
-- [ ] Responsive website
+- [X] Responsive website
 
 
 ## Buit with
