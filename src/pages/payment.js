@@ -27,7 +27,7 @@ export default function Payment() {
   const [error, setError] = useState(null);
   const [disabled, setDisabled] = useState(true);
   const [clientSecret, setClientSecret] = useState(true);
-  // Client 
+  // Client
   useEffect(() => {
     const getClientSecret = async () => {
       const response = await axios({
@@ -70,7 +70,7 @@ export default function Payment() {
 	type: "EMPTY_BASKET"
       })
 
-      history.replace("/");
+      history.replace("/orders");
     })
   }
 

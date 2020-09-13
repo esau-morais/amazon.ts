@@ -14,10 +14,11 @@
 
 - [X] Collapsed side bar
 - [X] Main section
-- [ ] Products Page
+- [X] Products Page
 - [X] Dynamic cart
 - [X] Login Page
 - [X] Responsive website
+- [ ] Video Testimonial
 
 
 ## Buit with

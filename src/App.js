@@ -9,6 +9,7 @@ import Aside from "./components/Aside";
 import Main from "./components/Main";
 import Checkout from "./pages/checkout";
 import Payment from "./pages/payment";
+import Orders from "./pages/orders";
 import Login from "./pages/login";
 // Firebase auth
 import { auth } from "./config/firebase";
@@ -56,6 +57,7 @@ export default function App() {
           <Route path="/login" component={Login} />
           {/* Product's pages */}
 	  <Route path="/checkout" component={Checkout} />
+	  <Route path="/orders" component={Orders} />
 	  <Elements stripe={promise}>
 	    <Route path="/payment" component={Payment} />
 	  </Elements>
