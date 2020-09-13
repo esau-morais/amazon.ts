@@ -6,7 +6,7 @@ import { Tooltip } from "@material-ui/core";
 // Cart
 import { useCartValue  } from '../../providers/cart';
 
-export default function CheckoutProduct({ id, product, image, price }) {
+export default function CheckoutProduct({ id, product, image, price, hideButton }) {
   const [{ basket }, dispatch] = useCartValue();
 
   const removeFromBasket = () => {
@@ -21,19 +21,21 @@ export default function CheckoutProduct({ id, product, image, price }) {
     <ProductInfo className="productInfo">
       <ProductsList>
           <Tooltip title="Remote from basket" arrow>
-          <button className="productCard" onClick={removeFromBasket}>
-            <div className="productImage">
-              <img
-                src={image}
-                alt={product}
-              />
-            </div>
-            {/* Click and update the cart state */}
-            <div className="productDesc">
-              <p>{product}</p>
-              <span>${price}</span>
-            </div>
-          </button>
+	  {
+	    <button className="productCard" onClick={removeFromBasket}>
+              <div className="productImage">
+                <img
+                  src={image}
+                  alt={product}
+                />
+              </div>
+              {/* Click and update the cart state */}
+              <div className="productDesc">
+                <p>{product}</p>
+                <span>${price}</span>
+              </div>
+            </button>
+	  }
         </Tooltip>
       </ProductsList>
     </ProductInfo>

@@ -1,8 +1,9 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import CurrencyFormat from 'react-currency-format';
 // Components
 import { Container } from '../components/Checkout/checkout';
-import { Back, Divider } from '../components/index';
+import { Back, Divider, Button } from '../components/index';
 import { CartRow } from '../components/Aside/aside';
 // Checkout products component
 import CheckoutProduct from '../components/Checkout';
@@ -14,6 +15,11 @@ import { cartTotalPrice } from '../providers/reducer';
 
 export default function Checkout({ id, product, image, price }) {
   const [{ basket }, dispatch] = useCartValue();
+  // push to payment page
+  const history = useHistory();
+  const pushToPayment = () => {
+    history.push("/payment");
+  }
 
   return (
     <Container>
@@ -71,7 +77,7 @@ export default function Checkout({ id, product, image, price }) {
             </Tooltip>
           </span>
         </CartRow>
-        <button>Checkout</button>
+        <Button onClick={pushToPayment}>Checkout</Button>
       </div>
     </Container>
   )

@@ -38,21 +38,6 @@ export const Container = styled.div`
     background-color: #ffffff;
   }
 
-  div.checkoutTotal > button {
-    width: 100%;
-
-    padding: 1.2rem 1rem;
-
-    border: none;
-    background-color: #e9a842;
-
-    font-size: 1rem;
-    font-weight: bold;
-    text-transform: uppercase;
-
-    cursor: pointer;
-  }
-
   @media screen and (max-width: 980px) {
     flex-direction: column;
 

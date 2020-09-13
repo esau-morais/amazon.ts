@@ -43,3 +43,26 @@ export const Divider = styled.hr`
     border: none;
     border-bottom: 2px solid #f8f8f8;
 `;
+
+export const Button = styled.button`
+    width: 100%;
+
+    padding: 1.2rem 1rem;
+
+    border: none;
+    background-color: #e9a842;
+    color: #1d1d1d;
+
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    &:disabled {
+      background-color: #e9a85a;
+      color: #2f2f2f;
+
+      cursor: not-allowed;
+    }
+`;
