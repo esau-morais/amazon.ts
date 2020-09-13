@@ -23,9 +23,6 @@ const iconStyle = {
 export default function Aside() {
   // Define state to open/hide the side bar
   const [open, setOpen] = useState(false);
-  // Define state to the cart items and total price
-  const [items, setItems] = useState([]);
-  const [total, setTotal] = useState(0);
   const [{ basket, user }, dispatch] = useCartValue();
 
   // Handle the user login in/out

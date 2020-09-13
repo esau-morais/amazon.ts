@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
 // Components
 import { Container } from "../components/Login";
+import { Back } from "../components/index";
+import { ArrowBackRounded  } from "@material-ui/icons";
 // Firebase auth
 import { auth } from "../config/firebase";
 
@@ -41,6 +43,10 @@ export default function Login() {
   return (
     <Container>
       <form>
+        <Back to="/">
+          <ArrowBackRounded />
+        </Back>
+
         <img src="/images/AmazonLogo.png" alt="Amazon Logo" />
 
 	<p>Sign in to shop right now!</p>
@@ -49,6 +55,7 @@ export default function Login() {
 	<input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)}   />
 
 	<button className="login" onClick={signIn}>Secure sign in</button>
+	<span className="separator">or</span>
 	<button className="register" onClick={register}>Register</button>
       </form>
     </Container>

@@ -4,6 +4,7 @@ export const Container = styled.div`
   width: 100%;
 
   padding: 2rem;
+  padding-left: calc(180px + 2rem);
 
   display: flex;
 

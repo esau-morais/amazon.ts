@@ -5,11 +5,13 @@ export const Container = styled.div`
     background: url(/images/AmazonLogin.jpeg) no-repeat center;
     background-size: cover;
 
+    padding-left: 180px;
+
     display: flex;
     align-items: center;
     justify-content: center;
 
-    form:first-child {
+    form {
       width: 400px;
       height: fit-content;
 
@@ -24,11 +26,11 @@ export const Container = styled.div`
       box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     }
 
-    form:first-child > img {
+    form > img {
       width: 10rem;
     }
 
-    form:first-child > p {
+    form > p {
       font-size: 1.2rem;
       text-transform: capitalize;
       color: #1f1f1f;
@@ -36,7 +38,7 @@ export const Container = styled.div`
       margin-bottom: 2rem;
     }
 
-    form:first-child > input {
+    form > input {
       padding: 1rem 0rem 1rem 2rem;
 
       font-size: 1.2rem;
@@ -55,7 +57,7 @@ export const Container = styled.div`
       }
     }
 
-    form:first-child > button {
+    form > button {
       border: none;
       border-radius: 5rem;
 
@@ -67,7 +69,7 @@ export const Container = styled.div`
       cursor: pointer;
     }
 
-    form:first-child > button.login {
+    form > button.login {
       margin-top: 4rem;
       padding: 1.6rem 1.4rem;
 
@@ -76,8 +78,13 @@ export const Container = styled.div`
       background-color: #ffad00;
     }
 
-    form:first-child > button.register {
-      margin-top: 2rem;
+    form > span.separator {
+      text-transform: uppercase;
+
+      padding: 0.4rem 0;
+    }
+
+    form > button.register {
       padding: 1.2rem 1rem;
 
       width: 60%;

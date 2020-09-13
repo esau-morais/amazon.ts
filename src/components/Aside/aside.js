@@ -1,6 +1,9 @@
 import styled from "styled-components";
 // ---------- Side bar Starts Here ----------
 export const Nav = styled.nav`
+  position: fixed;
+  z-index: 5;
+
   padding: 1rem 2rem;
 
   width: ${({ open }) => (open ? "382px" : "180px")};
@@ -27,8 +30,6 @@ export const Nav = styled.nav`
   }
 
   @media screen and (max-width: 980px) {
-    position: fixed;
-
     padding: 1rem;
     width: ${({ open }) => (open ? "100%" : "60px")};
 
@@ -66,7 +67,6 @@ export const Row = styled.div`
 `;
 
 export const SearchBar = styled.div`
-  width: 80%;
   margin: 2rem 0;
 
   display: ${({ open }) => (open ? "inherit" : "none")};
@@ -95,10 +95,6 @@ export const SearchBar = styled.div`
       color: #dadada;
     }
   }
-
-  @media screen and (max-width: 980px) {
-    width: ${({ open }) => (open ? "80%" : "100%")};
-  }
 `;
 
 // ---------- Cart Starts Here ----------
@@ -112,14 +108,17 @@ export const Cart = styled.div`
   align-items: ${({ open }) => (open ? "unset" : "center")};
   transition: flex-direction 0.4s ease-in-out;
 
-  a >  img.yourProfile {
-    width: ${({ open }) => (open ? "20%" : "40%")};
-
+  a:first-child {
     margin: ${({ open }) => (open ? "2rem auto" : "0 auto")};
 
     display: flex;
+    justify-content: center;
+  }
 
-    transition: transform 0.4s ease-in-out;
+  a >  img.yourProfile {
+    width: ${({ open }) => (open ? "20%" : "40%")};
+
+    transition: width 0.4s ease-in-out;
   }
 
   @media screen and (max-width: 980px) {
