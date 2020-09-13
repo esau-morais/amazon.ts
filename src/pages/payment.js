@@ -13,6 +13,7 @@ import { cartTotalPrice } from '../providers/reducer';
 // Payment
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import axios from '../services/api';
+import { db } from "../config/firebase";
 
 export default function Payment() {
   const history = useHistory();
@@ -51,6 +52,17 @@ export default function Payment() {
       }
     }).then(({ paymentIntent }) => {
       // Payment confirmation
+      db
+        .collection('users')
+        .doc(user?.uid)
+        .collection('orders')
+        .doc(paymentIntent.id)
+        .set({
+          basket: basket,
+          amount: paymentIntent.amount,
+          created: paymentIntent.created
+         })
+
       setSuccess(true);
       setError(null);
       setProcess(false);

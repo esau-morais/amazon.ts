@@ -4,7 +4,10 @@ import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   width: 100%;
-  overflow-y: auto;
+
+  @media screen and (max-width: 980px) {
+    padding-left: 60px;
+  }
 `;
 
 export const RouteLink = styled(Link)`

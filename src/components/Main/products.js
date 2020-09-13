@@ -5,7 +5,8 @@ import { Tooltip } from '@material-ui/core';
 import { useCartValue } from "../../providers/cart";
 
 export default function Product({ id, product, image, price }) {
-  const [{}, dispatch] = useCartValue();
+  const [{ basket }, dispatch] = useCartValue();
+  console.log(basket);
 
   const addToBasket = () => {
     dispatch({

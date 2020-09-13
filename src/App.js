@@ -52,13 +52,13 @@ export default function App() {
         <Aside />
         <Switch>
           <Route exact path="/" component={Main} />
+	  {/* Login/Register page */}
+          <Route path="/login" component={Login} />
           {/* Product's pages */}
 	  <Route path="/checkout" component={Checkout} />
 	  <Elements stripe={promise}>
 	    <Route path="/payment" component={Payment} />
 	  </Elements>
-	  {/* Login/Register page */}
-	  <Route path="/login" component={Login} />
         </Switch>
       </Router>
     </div>

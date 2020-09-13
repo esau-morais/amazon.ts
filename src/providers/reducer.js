@@ -4,8 +4,7 @@ export const initialState = {
 }
 
 // Selector
-export const cartTotalPrice = (basket) =>
-  basket?.reduce((amount, item) => item.price + amount, 0);
+export const cartTotalPrice = (basket) => (basket?.reduce((amount, item) => item.price + amount, 0));
 
 const reducer = (state, action) => {
   console.log(action);

@@ -39,16 +39,20 @@ export const Container = styled.div`
   }
 
   @media screen and (max-width: 980px) {
+    padding-left: calc(2rem + 60px);
+    margin-right: 0;
+
     flex-direction: column;
 
     div.checkoutProducts {
       width: 100%;
 
-      margin-bottom: auto;
+      margin-bottom: 2rem;
     }
 
     div.checkoutTotal {
       width: 100%;
+      height: fit-content;
 
       position: unset;
       bottom: unset;

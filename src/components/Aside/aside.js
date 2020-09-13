@@ -27,6 +27,8 @@ export const Nav = styled.nav`
   }
 
   @media screen and (max-width: 980px) {
+    position: fixed;
+
     padding: 1rem;
     width: ${({ open }) => (open ? "100%" : "60px")};
 

@@ -11,7 +11,7 @@ export const Container = styled.div`
 
     form:first-child {
       width: 400px;
-      height: 80%;
+      height: fit-content;
 
       padding: 1.4rem 1rem;
 
@@ -77,11 +77,21 @@ export const Container = styled.div`
     }
 
     form:first-child > button.register {
-      margin-top: auto;
+      margin-top: 2rem;
       padding: 1.2rem 1rem;
 
       width: 60%;
 
       background-color: #feb42f;
+    }
+
+    @media screen and (max-width: 980px) {
+      width: 100%;
+
+      padding-left: 60px;
+
+      form:first-child > input {
+	width: 100%;
+      }
     }
 `;
