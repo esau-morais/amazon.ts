@@ -8,7 +8,7 @@ import { CartRow } from '../components/Aside/aside';
 // Checkout products component
 import CheckoutProduct from '../components/Checkout';
 import { Tooltip } from "@material-ui/core";
-import { ArrowBackRounded, InfoOutlined  } from "@material-ui/icons";
+import { ArrowBackRounded, InfoOutlined } from "@material-ui/icons";
 // Cart values
 import { useCartValue } from '../providers/cart';
 import { cartTotalPrice } from '../providers/reducer';
@@ -34,15 +34,15 @@ export default function Checkout({ id, product, image, price }) {
 
         <Divider />
 
-	{basket.map(item => (
-	  <CheckoutProduct
-	    key={item.id}
-	    id={item.id}
-	    product={item.product}
-	    image={item.image}
-	    price={item.price}
-	  />
-	))}
+        {basket.map(item => (
+          <CheckoutProduct
+            key={item.id}
+            id={item.id}
+            product={item.product}
+            image={item.image}
+            price={item.price}
+          />
+        ))}
       </div>
 
       <div className="checkoutTotal">
@@ -54,19 +54,19 @@ export default function Checkout({ id, product, image, price }) {
         <Divider />
 
         <CurrencyFormat
-	  renderText={(value) => (
-	    <>
-	      <CartRow>
-          	<p>Sub-Total</p>
-          	<span>{value}</span>
+          renderText={(value) => (
+            <>
+              <CartRow>
+                <p>Sub-Total</p>
+                <span>{value}</span>
               </CartRow>
-	    </>
-	  )}
-	  value={cartTotalPrice(basket)}
-	  decimalScale={2}
-	  displayType={'text'}
-	  thousandSeparator={true}
-	  prefix={'$'}
+            </>
+          )}
+          value={cartTotalPrice(basket)}
+          decimalScale={2}
+          displayType={'text'}
+          thousandSeparator={true}
+          prefix={'$'}
         />
 
         <CartRow>

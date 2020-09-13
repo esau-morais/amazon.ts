@@ -23,7 +23,7 @@ export default function Main({ id, title, image, price }) {
         <Product id="3" product="Amazon Cloud Cam Indoor" image="/images/Product3.jpeg" price={89.99} />
         <Product id="4" product="CoolBELL 15.6 Inch Nylon" image="/images/Product4.jpeg" price={29.99} />
         <Product id="5" product="Medical Ear Thermometer" image="/images/Product5.jpeg" price={7.69} />
-	<Product id="6" product="Mutuw Desk Lamp" image="/images/Product6.jpeg" price={36.99} />
+        <Product id="6" product="Mutuw Desk Lamp" image="/images/Product6.jpeg" price={36.99} />
       </ProductsList>
     </Container>
   );

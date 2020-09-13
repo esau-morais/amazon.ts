@@ -6,7 +6,7 @@ import { Container } from '../components/Checkout/checkout';
 import { Back, Divider, Button } from '../components/index';
 import CheckoutProduct from '../components/Checkout';
 import { CartRow } from '../components/Aside/aside';
-import { ArrowBackRounded  } from "@material-ui/icons";
+import { ArrowBackRounded } from "@material-ui/icons";
 // Checkout products component
 import { useCartValue } from '../providers/cart';
 import { cartTotalPrice } from '../providers/reducer';
@@ -19,7 +19,7 @@ export default function Payment() {
   const history = useHistory();
   const [{ basket, user }, dispatch] = useCartValue();
   // Payment
-  const stripe= useStripe();
+  const stripe = useStripe();
   const elements = useElements();
   // Changes
   const [succeeded, setSuccess] = useState(false);
@@ -34,7 +34,7 @@ export default function Payment() {
         method: "post",
         url: `/payments/create?total=${cartTotalPrice(basket) * 100}`
       });
-      setClientSecret(response.data.clientSecret);
+      setClientSecret(response.data.clientSecret);
     }
     getClientSecret();
   }, [basket])
@@ -47,7 +47,7 @@ export default function Payment() {
 
     const payload = await stripe.confirmCardPayment(clientSecret, {
       payment_method: {
-	card: elements.getElement(CardElement)
+        card: elements.getElement(CardElement)
       }
     }).then(({ paymentIntent }) => {
       // Payment confirmation
@@ -60,14 +60,14 @@ export default function Payment() {
           basket: basket,
           amount: paymentIntent.amount,
           created: paymentIntent.created
-         })
+        })
 
       setSuccess(true);
       setError(null);
       setProcess(false);
 
       dispatch({
-	type: "EMPTY_BASKET"
+        type: "EMPTY_BASKET"
       })
 
       history.replace("/orders");
@@ -83,7 +83,7 @@ export default function Payment() {
   return (
     <Container>
       <div className="checkoutProducts">
-	<div>
+        <div>
           <Back to="/checkout">
             <ArrowBackRounded />
           </Back>
@@ -91,7 +91,7 @@ export default function Payment() {
           <h2>Payment</h2>
         </div>
 
-	<Divider />
+        <Divider />
 
         {basket.map(item => (
           <CheckoutProduct
@@ -111,12 +111,12 @@ export default function Payment() {
 
         <Divider />
 
-	<form onSubmit={handlePayment}>
-	  <CardElement onChange={handlePayChange} />
+        <form onSubmit={handlePayment}>
+          <CardElement onChange={handlePayChange} />
 
-	  <Divider />
+          <Divider />
 
-	  <CurrencyFormat
+          <CurrencyFormat
             renderText={(value) => (
               <>
                 <CartRow>
@@ -132,13 +132,13 @@ export default function Payment() {
             prefix={'$'}
           />
 
-	  <Button disabled={processing || disabled || succeeded}>
-	    {processing ? "Buying..." : "Buy now!"}
-	  </Button>
+          <Button disabled={processing || disabled || succeeded}>
+            {processing ? "Buying..." : "Buy now!"}
+          </Button>
 
-	  {/* Error */}
-	  {error && <span>{error}</span>}
-	</form>
+          {/* Error */}
+          {error && <span>{error}</span>}
+        </form>
       </div>
     </Container>
   )

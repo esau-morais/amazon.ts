@@ -32,17 +32,17 @@ export default function App() {
     auth.onAuthStateChanged(authUser => {
       console.log("This is you >>> ", authUser);
       if (authUser) {
-	// if the user logged in
-	dispatch({
-	  type: "SET_USER",
-	  user: authUser
-	})
+        // if the user logged in
+        dispatch({
+          type: "SET_USER",
+          user: authUser
+        })
       } else {
-	// if the user logged out
-	dispatch({
-	  type: "SET_USER",
-	  user: null
-	})
+        // if the user logged out
+        dispatch({
+          type: "SET_USER",
+          user: null
+        })
       }
     })
   }, [])
@@ -53,14 +53,14 @@ export default function App() {
         <Aside />
         <Switch>
           <Route exact path="/" component={Main} />
-	  {/* Login/Register page */}
+          {/* Login/Register page */}
           <Route path="/login" component={Login} />
           {/* Product's pages */}
-	  <Route path="/checkout" component={Checkout} />
-	  <Route path="/orders" component={Orders} />
-	  <Elements stripe={promise}>
-	    <Route path="/payment" component={Payment} />
-	  </Elements>
+          <Route path="/checkout" component={Checkout} />
+          <Route path="/orders" component={Orders} />
+          <Elements stripe={promise}>
+            <Route path="/payment" component={Payment} />
+          </Elements>
         </Switch>
       </Router>
     </div>

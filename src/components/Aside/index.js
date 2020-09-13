@@ -62,13 +62,13 @@ export default function Aside() {
       </SearchBar>
       {/* Cart section */}
       <Cart open={open}>
-	<RouteLink  className="signInOut" to={!user && "/login"}  onClick={handleUserAuth}>
+        <RouteLink className="signInOut" to={!user && "/login"} onClick={handleUserAuth}>
           {user ?
-	    <img  className="yourProfile" src="https://img.icons8.com/ios/452/login-rounded-right.png" alt="Log Out" style={{ transform: "rotate(-180deg)" }} />
-	    :
-	    <img className="yourProfile" src="https://img.icons8.com/ios/452/login-rounded-right.png" alt="Log In" />
-	  }
-	</RouteLink>
+            <img className="yourProfile" src="https://img.icons8.com/ios/452/login-rounded-right.png" alt="Log Out" style={{ transform: "rotate(-180deg)" }} />
+            :
+            <img className="yourProfile" src="https://img.icons8.com/ios/452/login-rounded-right.png" alt="Log In" />
+          }
+        </RouteLink>
         <CartRow>
           {/* If the side bar is open, return both.
               Otherwise, return just "Open"
@@ -103,16 +103,16 @@ export default function Aside() {
               <LocalMallOutlined />
             </Badge>
             {/* The total price will be/is dynamic */}
-	    <CurrencyFormat
-	      renderText={(value) => (
-	        <span className="totalPrice">{value}</span>
-	      )}
-	      value={cartTotalPrice(basket)}
-	      decimalScale={2}
-	      displayType={"text"}
-	      thousandSeparator={true}
-	      prefix={"$"}
-	    />
+            <CurrencyFormat
+              renderText={(value) => (
+                <span className="totalPrice">{value}</span>
+              )}
+              value={cartTotalPrice(basket)}
+              decimalScale={2}
+              displayType={"text"}
+              thousandSeparator={true}
+              prefix={"$"}
+            />
           </div>
 
           <RouteLink to="/checkout">View my cart</RouteLink>

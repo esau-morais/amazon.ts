@@ -4,7 +4,7 @@ import { ProductInfo } from './checkout';
 import { ProductsList } from '../Main/main';
 import { Tooltip } from "@material-ui/core";
 // Cart
-import { useCartValue  } from '../../providers/cart';
+import { useCartValue } from '../../providers/cart';
 
 export default function CheckoutProduct({ id, product, image, price, hideButton }) {
   const [{ basket }, dispatch] = useCartValue();
@@ -20,9 +20,9 @@ export default function CheckoutProduct({ id, product, image, price, hideButton 
   return (
     <ProductInfo className="productInfo">
       <ProductsList>
-          <Tooltip title="Remote from basket" arrow>
-	  {
-	    <button className="productCard" onClick={removeFromBasket}>
+        <Tooltip title="Remote from basket" arrow>
+          {
+            <button className="productCard" onClick={removeFromBasket}>
               <div className="productImage">
                 <img
                   src={image}
@@ -35,7 +35,7 @@ export default function CheckoutProduct({ id, product, image, price, hideButton 
                 <span>${price}</span>
               </div>
             </button>
-	  }
+          }
         </Tooltip>
       </ProductsList>
     </ProductInfo>
