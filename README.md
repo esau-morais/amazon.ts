@@ -18,7 +18,7 @@
 - [X] Dynamic cart
 - [X] Login Page
 - [X] Responsive website
-- [ ] Video Testimonial
+- [X] Video Testimonial
 
 
 ## Buit with
