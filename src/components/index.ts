@@ -1,6 +1,7 @@
-import styled from "styled-components";
+import { Link } from 'react-router-dom'
+
+import styled from 'styled-components'
 // Inheritence
-import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   width: 100%;
@@ -10,12 +11,12 @@ export const Container = styled.div`
   @media screen and (max-width: 980px) {
     padding-left: 60px;
   }
-`;
+`
 
 export const RouteLink = styled(Link)`
   font-size: 14px;
   color: #f69a11;
-`;
+`
 
 export const Back = styled(Link)`
     display: flex;
@@ -38,7 +39,7 @@ export const Back = styled(Link)`
     &:hover {
       box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     }
-`;
+`
 
 export const Divider = styled.hr`
     margin: 2rem 0 0.6rem 0;
@@ -47,7 +48,7 @@ export const Divider = styled.hr`
 
     border: none;
     border-bottom: 2px solid #f8f8f8;
-`;
+`
 
 export const Button = styled.button`
     width: 100%;
@@ -70,4 +71,4 @@ export const Button = styled.button`
 
       cursor: not-allowed;
     }
-`;
+`

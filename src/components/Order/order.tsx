@@ -1,9 +1,10 @@
-import React from "react";
-// Components
-import { ProductInfo } from '../Checkout/checkout';
-import { ProductsList } from '../Main/main';
 
-export default function CheckoutOrder({ id, product, image, price }) {
+// Components
+import { ProductInfo } from '../Checkout/checkout'
+import { ProductsList } from '../Main/main'
+import { ProductProps } from '../Main/products'
+
+const CheckoutOrder = ({ product, image, price }: Omit<ProductProps, 'id'>) => {
   return (
     <ProductInfo className="productInfo">
       <ProductsList>
@@ -24,3 +25,5 @@ export default function CheckoutOrder({ id, product, image, price }) {
     </ProductInfo>
   )
 }
+
+export default CheckoutOrder

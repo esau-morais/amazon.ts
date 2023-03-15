@@ -1,18 +1,13 @@
-import React from "react";
 // Components
-import { Container, RouteLink } from "../index";
-import { Row, ProductsList } from "./main";
+import { Container, RouteLink } from '../index'
+import { ProductsList, Row } from './main'
 // Products
-import Product from './products';
-// Carousel
-import Carousel from './carousel';
+import Product from './products'
 
-export default function Main({ id, title, image, price }) {
-
+const Main = () => {
   return (
     /* Main */
     <Container>
-      <Carousel />
       <Row>
         <p>Recommended deals: 12 Days of Deals</p>
         <RouteLink to="/">See all</RouteLink>
@@ -26,5 +21,7 @@ export default function Main({ id, title, image, price }) {
         <Product id="6" product="Mutuw Desk Lamp" image="/images/Product6.jpeg" price={36.99} />
       </ProductsList>
     </Container>
-  );
+  )
 }
+
+export default Main

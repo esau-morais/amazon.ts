@@ -1,25 +1,23 @@
-import React from 'react';
-import { useHistory } from 'react-router-dom';
-import CurrencyFormat from 'react-currency-format';
-// Components
-import { Container } from '../components/Checkout/checkout';
-import { Back, Divider, Button } from '../components/index';
-import { CartRow } from '../components/Aside/aside';
-// Checkout products component
-import CheckoutProduct from '../components/Checkout';
-import { Tooltip } from "@material-ui/core";
-import { ArrowBackRounded, InfoOutlined } from "@material-ui/icons";
-// Cart values
-import { useCartValue } from '../providers/cart';
-import { cartTotalPrice } from '../providers/reducer';
+import CurrencyFormat from 'react-currency-format'
+import { useHistory } from 'react-router-dom'
 
-export default function Checkout({ id, product, image, price }) {
-  const [{ basket }, dispatch] = useCartValue();
+// Components
+import { Tooltip } from '@material-ui/core'
+import { ArrowBackRounded, InfoOutlined } from '@material-ui/icons'
+
+import { CartRow } from '../components/Aside/aside'
+import CheckoutProduct from '../components/Checkout'
+import { Container } from '../components/Checkout/checkout'
+import { Back, Button, Divider } from '../components/index'
+
+// Cart values
+import { useCartValue } from '../providers/cart'
+import { cartTotalPrice } from '../providers/reducer'
+
+const Checkout = () => {
+  const [{ basket }] = useCartValue()
   // push to payment page
-  const history = useHistory();
-  const pushToPayment = () => {
-    history.push("/payment");
-  }
+  const history = useHistory()
 
   return (
     <Container>
@@ -34,7 +32,7 @@ export default function Checkout({ id, product, image, price }) {
 
         <Divider />
 
-        {basket.map(item => (
+        {basket.map((item) => (
           <CheckoutProduct
             key={item.id}
             id={item.id}
@@ -77,8 +75,10 @@ export default function Checkout({ id, product, image, price }) {
             </Tooltip>
           </span>
         </CartRow>
-        <Button onClick={pushToPayment}>Checkout</Button>
+        <Button onClick={() => history.push('/payment')}>Checkout</Button>
       </div>
     </Container>
   )
 }
+
+export default Checkout

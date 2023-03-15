@@ -1,32 +1,34 @@
-import React, { useState } from 'react';
-import { useHistory } from "react-router-dom";
+import { SyntheticEvent, useState } from 'react'
+import { useHistory } from 'react-router-dom'
+
 // Components
-import { Container } from "../components/Login";
-import { Back } from "../components/index";
-import { ArrowBackRounded } from "@material-ui/icons";
+import { ArrowBackRounded } from '@material-ui/icons'
+
+import { Back } from '../components/index'
+import { Container } from '../components/Login'
+
+
 // Firebase auth
-import { auth } from "../config/firebase";
+import { auth } from '../config/firebase'
 
-export default function Login() {
-  const history = useHistory();
+const Login = () => {
+  const history = useHistory()
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
-  const signIn = e => {
-    e.preventDefault();
+  const signIn = (e: SyntheticEvent<HTMLFormElement>) => {
+    e.preventDefault()
 
     // firebase job
     auth
       .signInWithEmailAndPassword(email, password)
-      .then(auth => {
-        history.push("/")
-      })
+      .then(() => history.push('/'))
       .catch(error => alert(error.message))
   }
 
-  const register = e => {
-    e.preventDefault();
+  const register = (e: SyntheticEvent<HTMLButtonElement>) => {
+    e.preventDefault()
 
     // firebase job to create a user
     auth
@@ -34,7 +36,7 @@ export default function Login() {
       .then((auth) => {
         // if the user was successfully created
         if (auth) {
-          history.push("/");
+          history.push('/')
         }
       })
       .catch(error => alert(error.message))
@@ -42,7 +44,7 @@ export default function Login() {
 
   return (
     <Container>
-      <form>
+      <form onSubmit={signIn}>
         <Back to="/">
           <ArrowBackRounded />
         </Back>
@@ -54,10 +56,12 @@ export default function Login() {
         <input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
         <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
 
-        <button className="login" onClick={signIn}>Secure sign in</button>
+        <button type="submit" className="login">Secure sign in</button>
         <span className="separator">or</span>
-        <button className="register" onClick={register}>Register</button>
+        <button type="button" className="register" onClick={register}>Register</button>
       </form>
     </Container>
   )
 }
+
+export default Login

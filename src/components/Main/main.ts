@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Img = styled.div`
   img {
     width: 100%;
   }
-`;
+`
 
 export const Row = styled.div`
   width: fit-content;
@@ -23,7 +23,7 @@ export const Row = styled.div`
     flex-direction: column;
     align-items: flex-start;
   }
-`;
+`
 
 export const ProductsList = styled.div`
   margin: 0 2rem 1rem;
@@ -78,4 +78,4 @@ export const ProductsList = styled.div`
   span {
     color: #969696;
   }
-`;
+`

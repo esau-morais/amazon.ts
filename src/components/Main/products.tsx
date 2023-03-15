@@ -1,23 +1,28 @@
-import React from 'react';
-// Components
-import { Tooltip } from '@material-ui/core';
 // Cart dispatch
-import { useCartValue } from "../../providers/cart";
+import { Tooltip } from '@material-ui/core'
 
-export default function Product({ id, product, image, price }) {
-  const [{ basket }, dispatch] = useCartValue();
-  console.log(basket);
+import { useCartValue } from '../../providers/cart'
+
+export type ProductProps = {
+  id: number
+  product: unknown
+  image: string
+  price: number
+}
+
+const Product = ({ id, product, image, price }: ProductProps) => {
+  const [, dispatch] = useCartValue()
 
   const addToBasket = () => {
     dispatch({
-      type: "ADD_TO_BASKET",
+      type: 'ADD_TO_BASKET',
       item: {
         id: id,
         product: product,
         image: image,
         price: price
       }
-    });
+    })
   }
 
   return (
@@ -38,3 +43,5 @@ export default function Product({ id, product, image, price }) {
     </Tooltip>
   )
 }
+
+export default Product

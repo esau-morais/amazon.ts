@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Container = styled.div`
   width: 100%;
@@ -59,7 +59,7 @@ export const Container = styled.div`
       bottom: unset;
     }
   }
-`;
+`
 
 export const ProductInfo = styled.div`
   display: flex;
@@ -67,4 +67,4 @@ export const ProductInfo = styled.div`
   align-items: flex-start;
 
   width: 100%;
-`;
+`

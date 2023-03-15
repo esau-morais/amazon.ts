@@ -1,12 +1,17 @@
-import styled from "styled-components";
+import styled from 'styled-components'
+
+type VisualState = {
+  open: boolean
+}
+
 // ---------- Side bar Starts Here ----------
-export const Nav = styled.nav`
+export const Nav = styled.nav<VisualState>`
   position: fixed;
   z-index: 5;
 
   padding: 1rem 2rem;
 
-  width: ${({ open }) => (open ? "382px" : "180px")};
+  width: ${({ open }) => (open ? '382px' : '180px')};
   height: 100%;
   transition: width 0.4s ease-in-out;
 
@@ -17,7 +22,7 @@ export const Nav = styled.nav`
   background-color: #ffffff;
 
   img {
-    width: ${({ open }) => (open ? "9rem" : "8rem")};
+    width: ${({ open }) => (open ? '9rem' : '8rem')};
     transition: width 0.4s ease-in-out;
   }
 
@@ -31,7 +36,7 @@ export const Nav = styled.nav`
 
   @media screen and (max-width: 980px) {
     padding: 1rem;
-    width: ${({ open }) => (open ? "100%" : "60px")};
+    width: ${({ open }) => (open ? '100%' : '60px')};
 
     img.defaultLogo {
       display: none;
@@ -42,10 +47,10 @@ export const Nav = styled.nav`
       display: unset;
     }
   }
-`;
+`
 
-export const Row = styled.div`
-  display: ${({ open }) => (open ? "inherit" : "none")};
+export const Row = styled.div<VisualState>`
+  display: ${({ open }) => (open ? 'inherit' : 'none')};
   transition: display 0.4s ease-in-out;
 
   select {
@@ -64,12 +69,12 @@ export const Row = styled.div`
     background-position: 80%;
     background-size: 8%;
   }
-`;
+`
 
-export const SearchBar = styled.div`
+export const SearchBar = styled.div<VisualState>`
   margin: 2rem 0;
 
-  display: ${({ open }) => (open ? "inherit" : "none")};
+  display: ${({ open }) => (open ? 'inherit' : 'none')};
   flex-direction: inherit;
   transition: display 0.4s ease-in-out;
 
@@ -95,38 +100,38 @@ export const SearchBar = styled.div`
       color: #dadada;
     }
   }
-`;
+`
 
 // ---------- Cart Starts Here ----------
-export const Cart = styled.div`
+export const Cart = styled.div<VisualState>`
   width: 100%;
 
   margin-top: auto;
 
-  display: ${({ open }) => (open ? "unset" : "flex")};
-  flex-direction: ${({ open }) => (open ? "row" : "column-reverse")};
-  align-items: ${({ open }) => (open ? "unset" : "center")};
+  display: ${({ open }) => (open ? 'unset' : 'flex')};
+  flex-direction: ${({ open }) => (open ? 'row' : 'column-reverse')};
+  align-items: ${({ open }) => (open ? 'unset' : 'center')};
   transition: flex-direction 0.4s ease-in-out;
 
   a:first-child {
-    margin: ${({ open }) => (open ? "2rem auto" : "0 auto")};
+    margin: ${({ open }) => (open ? '2rem auto' : '0 auto')};
 
     display: flex;
     justify-content: center;
   }
 
   a >  img.yourProfile {
-    width: ${({ open }) => (open ? "20%" : "40%")};
+    width: ${({ open }) => (open ? '20%' : '40%')};
 
     transition: width 0.4s ease-in-out;
   }
 
   @media screen and (max-width: 980px) {
     a > img.yourProfile {
-      width: ${({ open }) => (open ? "20%" : "100%")};
+      width: ${({ open }) => (open ? '20%' : '100%')};
     }
   }
-`;
+`
 
 export const CartRow = styled.div`
   margin: 0 0 2rem 0;
@@ -147,52 +152,52 @@ export const CartRow = styled.div`
 
     cursor: pointer;
   }
-`;
+`
 
-export const CartPrices = styled.div`
+export const CartPrices = styled.div<VisualState>`
   padding: 2rem 1rem;
 
   display: flex;
-  flex-direction: ${({ open }) => (open ? "row" : "column")};
+  flex-direction: ${({ open }) => (open ? 'row' : 'column')};
   align-items: center;
   justify-content: space-between;
 
-  background-color: ${({ open }) => (open ? "#f8f8f8" : "none")};
+  background-color: ${({ open }) => (open ? '#f8f8f8' : 'none')};
   transition: background-color 0.4s ease-in-out;
 
   div:first-child {
     display: inherit;
-    flex-direction: ${({ open }) => (open ? "row" : "column")};
+    flex-direction: ${({ open }) => (open ? 'row' : 'column')};
     align-items: center;
   }
 
   a {
-    margin-top: ${({ open }) => (open ? "0" : "2rem")}
+    margin-top: ${({ open }) => (open ? '0' : '2rem')}
   }
 
   span.totalPrice {
-    margin-left: ${({ open }) => (open ? "1rem" : "0")};
+    margin-left: ${({ open }) => (open ? '1rem' : '0')};
 
-    margin-top: ${({ open }) => (open ? "0" : "1rem")};
-    margin-bottom: ${({ open }) => (open ? "0" : "1rem")};
+    margin-top: ${({ open }) => (open ? '0' : '1rem')};
+    margin-bottom: ${({ open }) => (open ? '0' : '1rem')};
 
     font-size: 1.2rem;
     font-weight: bold;
 
     @media screen and (max-width: 980px) {
-      display: ${({ open }) => (open ? "unset" : "none")};
+      display: ${({ open }) => (open ? 'unset' : 'none')};
     }
   }
 
   hr {
     margin: 2rem 0 0 0;
-    display: ${({ open }) => (open ? "none" : "unset")};
+    display: ${({ open }) => (open ? 'none' : 'unset')};
     width: 100%;
     color: #f8f8f8;
 
     border: none;
     border-bottom: 2px solid #f8f8f8;
   }
-`;
+`
 // ---------- Cart Ends Here ----------
 // ---------- Side bar Ends Here ----------

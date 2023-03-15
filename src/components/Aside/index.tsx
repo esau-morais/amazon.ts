@@ -1,34 +1,36 @@
-import React, { useState } from "react";
-import CurrencyFormat from 'react-currency-format';
+import { useState } from 'react'
+import CurrencyFormat from 'react-currency-format'
+
 // Components
-import { Nav, Row, SearchBar, Cart, CartRow, CartPrices } from "./aside";
-import { RouteLink } from "../index";
-import { Badge } from "@material-ui/core";
+import { Badge } from '@material-ui/core'
 import {
   LocalMallOutlined,
   ArrowBackIosRounded,
   ArrowForwardIosRounded
-} from "@material-ui/icons";
+} from '@material-ui/icons'
+
 // Basket
-import { useCartValue } from "../../providers/cart";
-import { cartTotalPrice } from '../../providers/reducer';
+import { auth } from '../../config/firebase'
+import { useCartValue } from '../../providers/cart'
+import { cartTotalPrice } from '../../providers/reducer'
 // Firebase auth
-import { auth } from "../../config/firebase";
+import { RouteLink } from '../index'
+import { Nav, Row, SearchBar, Cart, CartRow, CartPrices } from './aside'
 
 const iconStyle = {
-  fontSize: "0.9rem",
-  marginRight: "0.4rem"
+  fontSize: '0.9rem',
+  marginRight: '0.4rem'
 }
 
-export default function Aside() {
+const Aside = () => {
   // Define state to open/hide the side bar
-  const [open, setOpen] = useState(false);
-  const [{ basket, user }, dispatch] = useCartValue();
+  const [open, setOpen] = useState(false)
+  const [{ basket, user }] = useCartValue()
 
   // Handle the user login in/out
   const handleUserAuth = () => {
     if (user) {
-      auth.signOut();
+      auth.signOut()
     }
   }
 
@@ -62,11 +64,11 @@ export default function Aside() {
       </SearchBar>
       {/* Cart section */}
       <Cart open={open}>
-        <RouteLink className="signInOut" to={!user && "/login"} onClick={handleUserAuth}>
+        <RouteLink className="signInOut" to={!user && '/login'} onClick={handleUserAuth}>
           {user ?
-            <img className="yourProfile" src="https://img.icons8.com/ios/452/login-rounded-right.png" alt="Log Out" style={{ transform: "rotate(-180deg)" }} />
+            'Logout'
             :
-            <img className="yourProfile" src="https://img.icons8.com/ios/452/login-rounded-right.png" alt="Log In" />
+            'Login'
           }
         </RouteLink>
         <CartRow>
@@ -74,18 +76,18 @@ export default function Aside() {
               Otherwise, return just "Open"
           */}
           {open ? <p>Your total price</p> : <></>}
-          <span onClick={() => setOpen(!open)}>
+          <span role="button" tabIndex={0} onKeyDown={e => e.preventDefault()} onMouseDown={e => e.preventDefault()} onClick={() => setOpen(!open)}>
             {open ? (
               <>
                 <ArrowBackIosRounded style={iconStyle} />
                 Roll
               </>
             ) : (
-                <>
-                  Open
-                  <ArrowForwardIosRounded style={iconStyle} />
-                </>
-              )}
+              <>
+                Open
+                <ArrowForwardIosRounded style={iconStyle} />
+              </>
+            )}
           </span>
         </CartRow>
         {/* Prices section */}
@@ -95,8 +97,8 @@ export default function Aside() {
             <Badge
               badgeContent={basket.length}
               anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "right"
+                vertical: 'bottom',
+                horizontal: 'right'
               }}
               color="primary"
             >
@@ -109,9 +111,9 @@ export default function Aside() {
               )}
               value={cartTotalPrice(basket)}
               decimalScale={2}
-              displayType={"text"}
+              displayType={'text'}
               thousandSeparator={true}
-              prefix={"$"}
+              prefix={'$'}
             />
           </div>
 
@@ -121,5 +123,7 @@ export default function Aside() {
         </CartPrices>
       </Cart>
     </Nav>
-  );
+  )
 }
+
+export default Aside
