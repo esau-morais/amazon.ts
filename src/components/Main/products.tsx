@@ -1,14 +1,8 @@
 // Cart dispatch
+import { ProductProps } from '@/types/data'
 import { Tooltip } from '@material-ui/core'
 
 import { useCartValue } from '../../providers/cart'
-
-export type ProductProps = {
-  id: number
-  product: unknown
-  image: string
-  price: number
-}
 
 const Product = ({ id, product, image, price }: ProductProps) => {
   const [, dispatch] = useCartValue()

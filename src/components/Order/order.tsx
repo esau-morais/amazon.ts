@@ -1,10 +1,11 @@
 
 // Components
+import { Product } from '@/types/data'
+
 import { ProductInfo } from '../Checkout/checkout'
 import { ProductsList } from '../Main/main'
-import { ProductProps } from '../Main/products'
 
-const CheckoutOrder = ({ product, image, price }: Omit<ProductProps, 'id'>) => {
+const CheckoutOrder = ({ product, image, price }: Omit<Product, 'id'>) => {
   return (
     <ProductInfo className="productInfo">
       <ProductsList>

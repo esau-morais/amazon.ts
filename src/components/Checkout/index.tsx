@@ -1,14 +1,14 @@
 
 // Components
+import { Product as CheckoutProductProps } from '@/types/data'
 import { Tooltip } from '@material-ui/core'
 
 // Cart
 import { useCartValue } from '../../providers/cart'
 import { ProductsList } from '../Main/main'
-import { ProductProps } from '../Main/products'
 import { ProductInfo } from './checkout'
 
-const CheckoutProduct = ({ id, product, image, price }: ProductProps) => {
+const CheckoutProduct = ({ id, product, image, price }: CheckoutProductProps) => {
   const [, dispatch] = useCartValue()
 
   const removeFromBasket = () => {

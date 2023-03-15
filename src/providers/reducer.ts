@@ -1,8 +1,7 @@
-
-import { ProductProps as ProductData } from '@/components/Main/products'
+import { Product } from '@/types/data'
 
 type State = {
-  basket: Array<ProductData>
+  basket: Array<Product>
   user: any
 }
 
@@ -12,7 +11,7 @@ export const initialState: State = {
 }
 
 // Selector
-export const cartTotalPrice = (basket: Array<ProductData>) => (basket?.reduce((amount, item) => item.price + amount, 0))
+export const cartTotalPrice = (basket: Array<Product>) => (basket?.reduce((amount, item) => item.price + amount, 0))
 
 const reducer = (state: State, action: any) => {
   switch (action.type) {

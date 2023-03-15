@@ -15,4 +15,4 @@ export const CartProvider = ({ reducer, initialState, children }: PropsWithChild
   </CartContext.Provider>
 )
 
-export const useCartValue = () => useContext(CartContext) as [typeof initialState, typeof reducer]
+export const useCartValue = () => useContext(CartContext) as [typeof initialState, any]
