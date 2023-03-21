@@ -64,7 +64,7 @@ const Aside = () => {
       </SearchBar>
       {/* Cart section */}
       <Cart open={open}>
-        <RouteLink className="signInOut" to={!user && '/login'} onClick={handleUserAuth}>
+        <RouteLink className="signInOut" to={!user ? '/login' : '/'} onClick={handleUserAuth}>
           {user ?
             'Logout'
             :

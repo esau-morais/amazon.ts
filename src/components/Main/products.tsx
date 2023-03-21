@@ -1,5 +1,5 @@
 // Cart dispatch
-import { ProductProps } from '@/types/data'
+import { Product as ProductProps } from '@/types/data'
 import { Tooltip } from '@material-ui/core'
 
 import { useCartValue } from '../../providers/cart'
